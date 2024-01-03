@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'; 
 import { Table, Button } from 'antd'; 
 import { ColumnsType } from 'antd/lib/table'; 
-import DataType from './interfaces/data-type'; 
+import DataType from './interfaces/pagination-data'; 
  
 const columns: ColumnsType<DataType> = [ 
   { 
@@ -26,8 +26,10 @@ const PaginationComponent: React.FC = () => {
     fetchData(); 
   }, [page]); 
  
+  const offset = (page - 1) * limit; 
+
   const fetchData = async () => { 
-    const offset = (page - 1) * limit; 
+    
     try { 
       const response = await axios.get(`http://universities.hipolabs.com/search?offset=${offset}&limit=${limit}`); 
       setData(response.data); 
@@ -46,7 +48,7 @@ const PaginationComponent: React.FC = () => {
     setPage(page + 1); 
   }; 
  
-  const offset = (page - 1) * limit; 
+  
  
   return ( 
     <> 
