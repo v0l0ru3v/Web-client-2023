@@ -3,9 +3,12 @@ import { RouteObject, useRoutes } from "react-router-dom";
 import About from '../components/AboutComp';
 import { FAQ } from '../components/FAQComp';
 import { TableComp } from '../components/TableComp';
+
 import { Contacts } from '../components/ContactsComp';
-import { CONTACT_ROUTE, FAQ_ROUTE, ABOUT_ROUTE, TABLE_ROUTE } from "../routing/ConfigRoutes";
+import { CONTACT_ROUTE, FAQ_ROUTE, ABOUT_ROUTE, TABLE_ROUTE, PAGINATION_ROUTE } from "../routing/ConfigRoutes";
 import { useAuth } from '../hooks/useAuth';
+import { Pagination } from 'antd';
+import { PaginationComp } from '../components/PaginationComp';
 
 export const MainRouter: React.FC = () => {
   const { isAuth } = useAuth();
@@ -14,6 +17,7 @@ export const MainRouter: React.FC = () => {
     { path: ABOUT_ROUTE, element: <About /> },
     { path: FAQ_ROUTE, element: <FAQ /> },
     { path: TABLE_ROUTE, element: <TableComp/> },
+    { path: PAGINATION_ROUTE, element: <PaginationComp /> },
   ];
 
   const authPath: RouteObject[] = isAuth
