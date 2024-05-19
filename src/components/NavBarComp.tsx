@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    margin: 0; /* Убираем стандартный отступ браузера */
+    margin: 0; 
     padding: 0;
   }
 `;
