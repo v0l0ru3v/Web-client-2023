@@ -1,6 +1,12 @@
 // src/App.tsx
 import React, { useState } from 'react';
 import { Document, Page, Text, Image, PDFDownloadLink, StyleSheet } from '@react-pdf/renderer';
+import styled from 'styled-components';
+
+const PaddedComponent = styled.div`
+  padding: 0 20px;
+ 
+`;
 
 const styles = StyleSheet.create({
   page: {
@@ -53,7 +59,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <PaddedComponent>
       <h1>Форма для генерации PDF</h1>
       <form>
         <div>
@@ -74,7 +80,7 @@ const App: React.FC = () => {
       >
         {({ loading }) => (loading ? 'Создание PDF...' : 'Скачать PDF')}
       </PDFDownloadLink>
-    </div>
+    </PaddedComponent>
   );
 };
 
