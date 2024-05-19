@@ -1,6 +1,6 @@
 import React  from 'react'
 import { RouteObject, useRoutes } from "react-router-dom";
-import { About } from '../components/AboutComp';
+import About from '../components/AboutComp';
 import { FAQ } from '../components/FAQComp';
 import { TableComp } from '../components/TableComp';
 import { Contacts } from '../components/ContactsComp';
