@@ -1,14 +1,14 @@
 import React  from 'react'
 import { RouteObject, useRoutes } from "react-router-dom";
-import About from '../components/AboutComp';
+import About from '../components/FuncComp/AboutComp';
 import { FAQ } from '../components/FAQComp';
-import { TableComp } from '../components/TableComp';
+import { TableComp } from '../components/FuncComp/TableComp';
 
 import { Contacts } from '../components/ContactsComp';
 import { CONTACT_ROUTE, FAQ_ROUTE, ABOUT_ROUTE, TABLE_ROUTE, PAGINATION_ROUTE } from "../routing/ConfigRoutes";
 import { useAuth } from '../hooks/useAuth';
 import { Pagination } from 'antd';
-import { PaginationComp } from '../components/PaginationComp';
+import { PaginationComp } from '../components/FuncComp/PaginationComp';
 
 export const MainRouter: React.FC = () => {
   const { isAuth } = useAuth();
